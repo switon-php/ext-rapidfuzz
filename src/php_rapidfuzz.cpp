@@ -1,3 +1,12 @@
+/* windows.h defines min and max as macros. RapidFuzz calls std::min and
+   std::numeric_limits<T>::max, which MSVC then rejects. Define this before
+   php.h pulls windows.h in. */
+#ifdef _WIN32
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
+#endif
+
 extern "C" {
 #ifdef HAVE_CONFIG_H
 #include "config.h"
