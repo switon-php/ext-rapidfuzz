@@ -1,0 +1,7 @@
+# Packagist and PIE ship the source tree. Drop CI and the agent notes, which
+# nothing in the package reads.
+/.github/       export-ignore
+/AGENTS.md      export-ignore
+/.gitignore     export-ignore
+/.gitattributes export-ignore
+/.workbuddy-ai/ export-ignore

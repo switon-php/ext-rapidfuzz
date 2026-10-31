@@ -1,0 +1,8 @@
+ARG_ENABLE("rapidfuzz", "enable rapidfuzz", "yes");
+
+if (PHP_RAPIDFUZZ != "no") {
+	var rapidfuzz_src = configure_module_dirname + "\\..\\src";
+	var rapidfuzz_inc = configure_module_dirname + "\\..\\third_party\\rapidfuzz\\include";
+	EXTENSION("rapidfuzz", "..\\src\\php_rapidfuzz.cpp");
+	ADD_FLAG("CFLAGS_RAPIDFUZZ", "/std:c++17 /EHsc /I " + rapidfuzz_inc + " /I " + rapidfuzz_src);
+}
